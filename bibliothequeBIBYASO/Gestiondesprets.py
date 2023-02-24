@@ -1,4 +1,4 @@
-from tkinter import * #importer la bibliotheque tkinte
+from tkinter import *  #Pour pouvoir importer la  bibiotheques tkinter on utilise pip install dans l'invite de commande
 import tkinter as tk  #
 from tkinter import ttk, messagebox #bibliotheque pour afficher nos message d'erreur dans l'application
 from turtle import bgcolor, title #permetre de gerer les selections et les message derreur  afficher ou de securite
