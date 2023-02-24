@@ -12,7 +12,7 @@ from turtle import bgcolor, title
 import pymysql # #bibliothéque qui permet d'intéragir avec la base de données
  
 
-class Ajouterdesadherents:  
+class Ajouterdesadherents:  #classe ajouterdesadherents
     def __init__(self,root):                   
         self.PageAjouterDesAdherents = root
         self.PageAjouterDesAdherents.title("Ajouter un Adhérent")
