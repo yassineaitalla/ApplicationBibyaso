@@ -1,4 +1,4 @@
-from tkinter import * # pour importer la bibliotheque tkinter
+from tkinter import * #Pour pouvoir importer la  bibiotheques tkinter on utilise pip install dans l'invite de commande
 from ast import Delete, excepthandler 
 from cProfile import label
 from email.mime import image
