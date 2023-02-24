@@ -9,11 +9,11 @@ from tkinter import *  #Pour pouvoir importer la  bibiotheques tkinter on utilis
 from subprocess import call  #importe la fonction call du module subprocess.
 from tkinter import ttk, messagebox #importe la sous-bibliothèque ttk et le module messagebox du module tkinter. 
 from turtle import bgcolor, title  #importe les fonctions bgcolor et title du module turtle.
- #permetre de gerer les selcetions et les message derrueeur  afficher ou de securite
+ #permetre de gerer les selections et les messages d'erreur  afficher ou de securite
 import pymysql #pour récuperer la bibliotheque de la base de donnée
   
                     
-class gestionlivres:  #classe formulaire
+class gestionlivres:  #classe gestion livres
     def __init__(self,root):                   
         self.Pagegestionlivres = root  
         self.Pagegestionlivres.title("Gestionlivres")#Titre de l'application gestion livres
