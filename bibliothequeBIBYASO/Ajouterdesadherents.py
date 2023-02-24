@@ -1,4 +1,4 @@
-from tkinter import * #Pour pouvoir importer la  bibiotheques tkinter on utilise pip install dans l'invite de commande
+from tkinter import * # pour importer la bibliotheque tkinter
 from ast import Delete, excepthandler 
 from cProfile import label
 from email.mime import image
@@ -6,20 +6,19 @@ from logging import root
 from re import L 
 from subprocess import call 
 from tkinter import ttk, messagebox #permet d'afficher les message d'erreur qu'on appel les messages box
-from turtle import bgcolor, title 
-
-
-import pymysql # #bibliothéque qui permet d'intéragir avec la base de données
+from turtle import bgcolor, title
+#from tkcalendar import *
+import pymysql  
  
 
-class Ajouterdesadherents:  #classe ajouterdesadherents
+class AjouterDeslivres:  # classe formulaire:
     def __init__(self,root):                   
         self.PageAjouterDesAdherents = root
         self.PageAjouterDesAdherents.title("Ajouter un Adhérent")
         self.PageAjouterDesAdherents.geometry("1040x560+400+200")
         self.PageAjouterDesAdherents.resizable(width=False, height=False)
         self.PageAjouterDesAdherents.iconbitmap()       
-        self.PageAjouterDesAdherents.iconbitmap("Images/bib.ico") 
+        #self.PageAjouterDesAdherents.iconbitmap(r"C:\Users\yass\Desktop\bibliothequeBIBYASO\Images\bib.ico") 
 
 
         self.nomAdherent = StringVar()
@@ -28,38 +27,31 @@ class Ajouterdesadherents:  #classe ajouterdesadherents
         self.villeAdherent = StringVar()
         
 
-        
-        #Cadres
+
         self.Paneauvertdegestionlivres = Frame(self.PageAjouterDesAdherents, bg="#bedb0d")
         self.Paneauvertdegestionlivres.place(x=190, y=0, width=1100, height=1000)
 
         Paneauorangedegestionlivres = Frame(self.PageAjouterDesAdherents, bg="#ff7f00")
         Paneauorangedegestionlivres.place(x=0, y=0, width=190, height=1000)
-        
-        
-        #BoutonImages
-        self.ImageGestionlivres = PhotoImage(file="Images/Gestionlivre.png")
+
+        self.ImageGestionlivres = PhotoImage()
         self.BoutonImageGestionlivres = Button(self.PageAjouterDesAdherents,command=self.Versgestionlivres, text="",image=self.ImageGestionlivres, width=184,height=90, bg="#ff7f00",font="arial 12 bold")
         self.BoutonImageGestionlivres.place(x=0 , y=0) 
         
-        self.ImageAdherents = PhotoImage(file="Images/Adherents.png")
+        self.ImageAdherents = PhotoImage()
         self.BoutonImageAdherents = Button(self.PageAjouterDesAdherents,command=self.VersPageAdherents, text="",image=self.ImageAdherents, width=184, height=90, bg="#ff7f00",font="arial 12 bold")
         self.BoutonImageAdherents.place(x=0 , y=140) 
 
-        self.ImageGestiondesprets = PhotoImage(file="Images/Emprunter.png")
+        self.ImageGestiondesprets = PhotoImage()
         self.BoutonImageGestiondesprets = Button(self.PageAjouterDesAdherents,command=self.Versgestiondesprets, text="",image=self.ImageGestiondesprets, width=184, height=90, bg="#ff7f00",font="arial 12 bold")
         self.BoutonImageGestiondesprets.place(x=0 , y=280) 
 
-        self.ImageSedeconnecter = PhotoImage(file="Images/Sedeconnecter.png")
+        self.ImageSedeconnecter = PhotoImage()
         self.BoutonImageSedeconnecter = Button(self.PageAjouterDesAdherents,command=self.PourSedeconnecter, text="",image=self.ImageSedeconnecter, width=184, height=90, bg="#ff7f00",font="arial 12 bold")
         self.BoutonImageSedeconnecter.place(x=0 , y=420)
 
-        
-        #Grand titre
         titresgestionlivretitre = Label(self.PageAjouterDesAdherents, text=" Ajout d'adhérents ",font =("algarian", 20,"bold"), bg="#bedb0d", fg="black")
         titresgestionlivretitre.place(x=350, y=20,width=500)
-        
-        #titre des boutons
 
         titresgestionlivres = Label(self.PageAjouterDesAdherents, text=" Livres ",font =("algarian", 15,"bold"), bg="#ff7f00", fg="black")
         titresgestionlivres.place(x=0, y=100,width=190)
@@ -75,7 +67,7 @@ class Ajouterdesadherents:  #classe ajouterdesadherents
 
         
 
-        #titres
+        #label pour ajouter un livre 
 
         titrenom = Label(self.PageAjouterDesAdherents, text=" Nom ",font =("algarian", 12,"bold"), bg="#bedb0d", fg="black")
         titrenom.place(x=300, y=150,width=100)
@@ -91,7 +83,9 @@ class Ajouterdesadherents:  #classe ajouterdesadherents
 
       
 
-       
+        
+        
+        
         
         #Champs de saisie
         
@@ -108,28 +102,23 @@ class Ajouterdesadherents:  #classe ajouterdesadherents
         codepostalAdherent.place(x=500, y=280,width=150)
 
         
-        #Bouton ajouter un adherent
+        # bouton
         BoutonAjouterUnAdherent = Button(self.PageAjouterDesAdherents, command=self.ClickBoutonAjouterUnAdherent, text="Ajouter un adhérent",cursor="hand2", font=("times new roman",11), bd=0,bg="white",fg="black")
         BoutonAjouterUnAdherent.place(x=700, y=400)
 
-    
-    #Fonction VersPageAdherents pour aller vers la page adherent
-    def VersPageAdherents(self): 
-        self.PageAjouterDesAdherents.destroy() 
-        call(["python", "Adherents.py"]) 
-    
-    #Fonction Versgestiondesprets pour aller vers la page gestion des prets
+
+    def VersPageAdherents(self): #fonction qui permet de supprimer la page
+        self.PageAjouterDesAdherents.destroy()
+        call(["python", "Adherents.py"])
+
     def Versgestiondesprets(self):
         self.PageAjouterDesAdherents.destroy()
         call(["python", "Gestiondesprets.py"])
-    
-    #Fonction pour aller vers la page gestionlivres
+        
     def Versgestionlivres(self):
         self.PageAjouterDesAdherents.destroy()
         call(["python", "Gestionlivres.py"])
 
-       
-    #Fonction pour se déconnecter  
     def PourSedeconnecter(self):
         lemessagebox = messagebox.askyesno("Déconnexion", "Voulez-vous vous déconnecter", parent=self.PageAjouterDesAdherents)
         if lemessagebox == YES:
@@ -137,8 +126,6 @@ class Ajouterdesadherents:  #classe ajouterdesadherents
          call(["python", "Connexion.py"])
 
     
-    
-    #Fonction pour ajouter un adherent 
     def ClickBoutonAjouterUnAdherent(self):
         if self.nomAdherent.get()=="" or self.prenomAdherent.get()=="" or self.codepostalAdherent.get()=="" or self.villeAdherent.get()=="":
          messagebox.showerror("Erreur", "Veuillez, remplir tout les champs", parent=self.PageAjouterDesAdherents) #si tout les champs ne sont pas rempli alors affiche un message box pour dire que les champs ne sont pas rempli 
@@ -172,5 +159,5 @@ class Ajouterdesadherents:  #classe ajouterdesadherents
 
 
 root =Tk()
-obj = Ajouterdesadherents(root)
+obj = AjouterDeslivres(root)
 root.mainloop() 
