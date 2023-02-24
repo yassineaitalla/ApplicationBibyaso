@@ -10,7 +10,7 @@ from turtle import bgcolor, title #permet d'importer les background et les titre
 import pymysql #bibliotheque pour faire des requettes vers la base de donnes
      
 
-class AjoutLivres:  # 
+class AjoutLivres:  # classe ajoutlivres
     def __init__(self,root):                   
         self.PageAjouterDesLivres = root
         self.PageAjouterDesLivres.title("Ajouter un livre") #titre Ajouter un livre
