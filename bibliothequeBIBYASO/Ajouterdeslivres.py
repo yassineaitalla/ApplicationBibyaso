@@ -1,9 +1,9 @@
 from ast import Delete, excepthandler
 from cProfile import label
 from email.mime import image
-from logging import root 
+from logging import root
 from re import L
-from tkinter import * #Pour pouvoir importer la  bibiotheques tkinter on utilise pip install dans l'invite de commande
+from tkinter import * #pour importer la bibliotheque tkinter
 from subprocess import call #Bibliotheque qui permet de faire appel au page sur les quelles on clique
 from tkinter import ttk, messagebox #permetre de gerer les selcetions et les message derrueeur  afficher ou de securite
 from turtle import bgcolor, title #permet d'importer les background et les titres
@@ -16,7 +16,7 @@ class AjoutLivres:  #
         self.PageAjouterDesLivres.title("Ajouter un livre") #titre Ajouter un livre
         self.PageAjouterDesLivres.geometry("1040x560+400+200") #taille de l'application
         self.PageAjouterDesLivres.resizable(width=False, height=False)# eviter d'agrandir la fenetre
-        self.PageAjouterDesLivres.iconbitmap("Images/bib.ico") 
+        self.PageAjouterDesLivres.iconbitmap() 
 
 
 
@@ -35,19 +35,19 @@ class AjoutLivres:  #
         Paneauorangedegestionlivres.place(x=0, y=0, width=190, height=1000)
 
         #PhotoBoutons
-        self.ImageGestionlivres = PhotoImage(file="Images/Gestionlivre.png")
+        self.ImageGestionlivres = PhotoImage()
         self.BoutonImagesGestionlivre = Button(self.PageAjouterDesLivres,command=self.VersGestionlivres, text="",image=self.ImageGestionlivres, width=184,height=90, bg="#ff7f00",font="arial 12 bold")
         self.BoutonImagesGestionlivre.place(x=0 , y=0) 
         
-        self.ImageAdherents = PhotoImage(file="Images/Adherents.png")
+        self.ImageAdherents = PhotoImage()
         self.BoutonImageAdherents = Button(self.PageAjouterDesLivres,command=self.VersAdherents ,text="",image=self.ImageAdherents, width=184, height=90, bg="#ff7f00",font="arial 12 bold")
         self.BoutonImageAdherents.place(x=0 , y=140) 
 
-        self.ImageEmprunter = PhotoImage(file="Images/Emprunter.png")
+        self.ImageEmprunter = PhotoImage()
         self.BoutonImageEmprunter = Button(self.PageAjouterDesLivres,command=self.VersGestiondesprets, text="",image=self.ImageEmprunter, width=184, height=90, bg="#ff7f00",font="arial 12 bold")
         self.BoutonImageEmprunter.place(x=0 , y=280) 
 
-        self.ImageSedeconnecter = PhotoImage(file="Images/Sedeconnecter.png")
+        self.ImageSedeconnecter = PhotoImage()
         self.BoutonImageSedeconnecter = Button(self.PageAjouterDesLivres, text="",command=self.PourSedeconnecter,image=self.ImageSedeconnecter, width=184, height=90, bg="#ff7f00",font="arial 12 bold")
         self.BoutonImageSedeconnecter.place(x=0 , y=420)
 
@@ -108,7 +108,7 @@ class AjoutLivres:  #
         self.champsdesaisietat.delete(0, END)
 
 
-    #Fonction ClickAjouterUnLivre pour inserer une livre dans la base de données
+    #Fonction ClickAjouterUnLivre pour inserer une livre dans la bse de données
     def ClickAjouterUnLivre(self):
         if self.TitreLivre.get()=="" or self.Auteurs.get()=="" or self.Collections.get()=="" or self.Etat.get()=="":
          messagebox.showerror("Erreur", "Veuillez remplir tout les champs", parent=self.PageAjouterDesLivres) #si tout les champs ne sont pas rempli alors affiche un message box pour dire que les champs ne sont pas rempli 
