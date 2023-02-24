@@ -1,9 +1,9 @@
-from ast import excepthandler
+from ast import excepthandler              
 from cProfile import label
 from email.mime import image
 from logging import root           
 from re import L
-from tkinter import *  # pour importer la bibliotheque tkinter
+from tkinter import *  #  #Pour pouvoir importer la  bibiotheques tkinter on utilise pip install dans l'invite de commande
 from subprocess import call #pour importer le module call qui permet de changer les pages
 
  
