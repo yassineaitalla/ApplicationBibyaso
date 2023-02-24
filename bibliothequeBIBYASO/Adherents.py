@@ -15,13 +15,13 @@ from turtle import bgcolor, title #permetre de gerer les selcetions et les messa
 import pymysql 
       
                     
-class adherents:  
+class adherents:  #classe formulaire:
     def __init__(self,root):                   
         self.PageAdherents = root
         self.PageAdherents.title("Adherents")
         self.PageAdherents.geometry("1040x560+400+200")
         self.PageAdherents.resizable(width=False, height=False)
-        self.PageAdherents.iconbitmap() 
+        self.PageAdherents.iconbitmap("Images/bib.ico") 
         
         self.idAdherent = StringVar()
         self.nom = StringVar()
@@ -38,19 +38,19 @@ class adherents:
         Paneauorangedegestionlivres = Frame(self.PageAdherents, bg="#ff7f00")
         Paneauorangedegestionlivres.place(x=0, y=0, width=190, height=1000)
 
-        self.ImageGestionlivres = PhotoImage()
+        self.ImageGestionlivres = PhotoImage(file="Images/Gestionlivre.png")
         self.BoutonGestionLivres = Button(self.PageAdherents, command=self.VersGestionsLivres,text="",image=self.ImageGestionlivres, width=184,height=90, bg="#ff7f00",font="arial 12 bold")
         self.BoutonGestionLivres.place(x=0 , y=0) 
         
-        self.ImageAdherents = PhotoImage()
+        self.ImageAdherents = PhotoImage(file="Images/Adherents.png")
         self.BoutonImageAdherent = Button(self.PageAdherents, text="",image=self.ImageAdherents, width=184, height=90, bg="#ff7f00",font="arial 12 bold")
         self.BoutonImageAdherent.place(x=0 , y=140) 
 
-        self.ImageGestionDesPrets = PhotoImage() 
+        self.ImageGestionDesPrets = PhotoImage(file="Images/Emprunter.png") 
         self.BoutonImageGestionDesPrets = Button(self.PageAdherents, command=self.VersGestionsdesPrets,text="",image=self.ImageGestionDesPrets, width=184, height=90, bg="#ff7f00",font="arial 12 bold")
         self.BoutonImageGestionDesPrets.place(x=0 , y=280) 
 
-        self.ImageSedeconnecter = PhotoImage()
+        self.ImageSedeconnecter = PhotoImage(file="Images/Sedeconnecter.png")
         self.BoutonImageSedeconnecter = Button(self.PageAdherents, text="",command=self.PourSeDeconnecter,image=self.ImageSedeconnecter, width=184, height=90, bg="#ff7f00",font="arial 12 bold")
         self.BoutonImageSedeconnecter.place(x=0 , y=420)
 
