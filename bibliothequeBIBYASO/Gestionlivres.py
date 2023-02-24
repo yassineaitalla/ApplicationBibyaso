@@ -20,7 +20,7 @@ class gestionlivres:  #classe formulaire
         self.Pagegestionlivres.geometry("1040x560+400+200")#Taille de notre Application    
 
         self.Pagegestionlivres.resizable(width=False, height=False) #eviter d'agrandir la fenetre  
-        self.Pagegestionlivres.iconbitmap() #Icone de l'application 
+        self.Pagegestionlivres.iconbitmap("Images/bib.ico") #Icone de l'application 
 
 
         #Déclarer des variables pour ensuite les récuperer
@@ -43,20 +43,20 @@ class gestionlivres:  #classe formulaire
 
         
         #Boutons Images
-        self.ImageGestionLivresDeLaPageGestionlivres = PhotoImage()
+        self.ImageGestionLivresDeLaPageGestionlivres = PhotoImage(file="Images/Gestionlivre.png")
         self.BoutonGestionLivresDeLaPageGestionlivres = Button(self.Pagegestionlivres,image=self.ImageGestionLivresDeLaPageGestionlivres, width=184,height=90, bg="#ff7f00",font="arial 12 bold")
         self.BoutonGestionLivresDeLaPageGestionlivres.place(x=0 , y=0) 
        
 
-        self.ImageAdherentDeLaPageGestionlivres = PhotoImage()
+        self.ImageAdherentDeLaPageGestionlivres = PhotoImage(file="Images/Adherents.png")
         self.BoutonGestionLivresDeLaPageGestionlivres = Button(self.Pagegestionlivres,command=self.VersPageAdherents, text="",image=self.ImageAdherentDeLaPageGestionlivres, width=184, height=90, bg="#ff7f00",font="arial 12 bold")
         self.BoutonGestionLivresDeLaPageGestionlivres.place(x=0 , y=140) 
 
-        self.ImageGestionDesPretsDeLaPageGestionlivres = PhotoImage()
+        self.ImageGestionDesPretsDeLaPageGestionlivres = PhotoImage(file="Images/Emprunter.png")
         self.BoutonGestionDesPretsDeLaPageGestionlivres = Button(self.Pagegestionlivres,command=self.VersPageGestionDesPrets, text="",image=self.ImageGestionDesPretsDeLaPageGestionlivres, width=184, height=90, bg="#ff7f00",font="arial 12 bold")
         self.BoutonGestionDesPretsDeLaPageGestionlivres.place(x=0 , y=280) 
 
-        self.ImageSeDeconnecterDeLaPageGestionlivres = PhotoImage()
+        self.ImageSeDeconnecterDeLaPageGestionlivres = PhotoImage(file="Images/Sedeconnecter.png")
         self.BoutonSeDeconnecterDeLaPageGestionlivres = Button(self.Pagegestionlivres, text="",command=self.BoutonDeconnexion,image=self.ImageSeDeconnecterDeLaPageGestionlivres, width=184, height=90, bg="#ff7f00",font="arial 12 bold")
         self.BoutonSeDeconnecterDeLaPageGestionlivres.place(x=0 , y=420) 
         
@@ -227,6 +227,4 @@ class gestionlivres:  #classe formulaire
 root =Tk()
 obj = gestionlivres(root)
 root.mainloop()
-
-
 
