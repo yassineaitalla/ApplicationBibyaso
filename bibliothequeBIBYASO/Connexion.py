@@ -1,12 +1,12 @@
-from distutils.cmd import Command              # c'est des bibliotheque qu'on a importer pour pouvoir bosser avec 
-                                               #pour pouvoir importer ces bibiotheques on utilise pip install dns l'invite de commande
+from distutils.cmd import Command              
+                                               #pour pouvoir importer toute ces bibiotheques on utilise pip install dns l'invite de commande
 from logging import root 
 from tkinter import *    #pour importer la bibliotheque tkinter
   
 from tkinter import ttk, messagebox #pour les messages derreur
 import pymysql #c'est une bibliothèque python qui permet d'interagir avec une base de données
 from subprocess import call #bibliotheque pour changer de page
-import hashlib # Pour faire le hashage de mot de passe 
+
 
 class PagedeConnexion:  #classe formulaire 
     def __init__(self,root): #self représente l'instance de la classe. En utilisant le mot clé " self " nous pouvons accéder aux attributs et méthodes de la classe en python. 
