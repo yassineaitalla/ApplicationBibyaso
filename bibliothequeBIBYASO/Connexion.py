@@ -3,7 +3,7 @@ from distutils.cmd import Command
 from logging import root 
 from tkinter import *    #pour importer la bibliotheque tkinter
   
-from tkinter import ttk, messagebox #pour les messages derreur
+from tkinter import ttk, messagebox   #Pour pouvoir importer la  bibiotheques tkinter on utilise pip install dans l'invite de commande
 import pymysql #c'est une bibliothèque python qui permet d'interagir avec une base de données
 from subprocess import call #bibliotheque pour changer de page
 
