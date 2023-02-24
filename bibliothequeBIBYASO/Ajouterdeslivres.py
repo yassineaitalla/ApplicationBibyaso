@@ -3,7 +3,7 @@ from cProfile import label
 from email.mime import image
 from logging import root 
 from re import L
-from tkinter import * #pour importer la bibliotheque tkinter
+from tkinter import * #Pour pouvoir importer la  bibiotheques tkinter on utilise pip install dans l'invite de commande
 from subprocess import call #Bibliotheque qui permet de faire appel au page sur les quelles on clique
 from tkinter import ttk, messagebox #permetre de gerer les selcetions et les message derrueeur  afficher ou de securite
 from turtle import bgcolor, title #permet d'importer les background et les titres
