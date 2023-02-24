@@ -35,19 +35,19 @@ class AjouterDesadherents:  # classe ajouter des adherents
         Paneauorangedegestionlivres.place(x=0, y=0, width=190, height=1000)
 
         self.ImageGestionlivres = PhotoImage(file="Images/Gestionlivre.png")
-        self.BoutonImageGestionlivres = Button(self.PageAjouterDesAdherents,command=self.Versgestionlivres, text="",image=self.ImageGestionlivres, width=184,height=90, bg="#ff7f00",font="arial 12 bold")
+        self.BoutonImageGestionlivres = Button(self.PageAjouterDesAdherents,cursor="hand2",command=self.Versgestionlivres, text="",image=self.ImageGestionlivres, width=184,height=90, bg="#ff7f00",font="arial 12 bold")
         self.BoutonImageGestionlivres.place(x=0 , y=0) 
         
         self.ImageAdherents = PhotoImage(file="Images/Adherents.png")
-        self.BoutonImageAdherents = Button(self.PageAjouterDesAdherents,command=self.VersPageAdherents, text="",image=self.ImageAdherents, width=184, height=90, bg="#ff7f00",font="arial 12 bold")
+        self.BoutonImageAdherents = Button(self.PageAjouterDesAdherents,cursor="hand2",command=self.VersPageAdherents, text="",image=self.ImageAdherents, width=184, height=90, bg="#ff7f00",font="arial 12 bold")
         self.BoutonImageAdherents.place(x=0 , y=140) 
 
         self.ImageGestiondesprets = PhotoImage(file="Images/Emprunter.png")
-        self.BoutonImageGestiondesprets = Button(self.PageAjouterDesAdherents,command=self.Versgestiondesprets, text="",image=self.ImageGestiondesprets, width=184, height=90, bg="#ff7f00",font="arial 12 bold")
+        self.BoutonImageGestiondesprets = Button(self.PageAjouterDesAdherents,cursor="hand2",command=self.Versgestiondesprets, text="",image=self.ImageGestiondesprets, width=184, height=90, bg="#ff7f00",font="arial 12 bold")
         self.BoutonImageGestiondesprets.place(x=0 , y=280) 
 
         self.ImageSedeconnecter = PhotoImage(file="Images/Sedeconnecter.png")
-        self.BoutonImageSedeconnecter = Button(self.PageAjouterDesAdherents,command=self.PourSedeconnecter, text="",image=self.ImageSedeconnecter, width=184, height=90, bg="#ff7f00",font="arial 12 bold")
+        self.BoutonImageSedeconnecter = Button(self.PageAjouterDesAdherents,cursor="hand2",command=self.PourSedeconnecter, text="",image=self.ImageSedeconnecter, width=184, height=90, bg="#ff7f00",font="arial 12 bold")
         self.BoutonImageSedeconnecter.place(x=0 , y=420)
 
         titresgestionlivretitre = Label(self.PageAjouterDesAdherents, text=" Ajout d'adhérents ",font =("algarian", 20,"bold"), bg="#bedb0d", fg="black")
