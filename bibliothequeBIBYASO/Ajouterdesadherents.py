@@ -6,13 +6,13 @@ from logging import root
 from re import L 
 from subprocess import call 
 from tkinter import ttk, messagebox #permet d'afficher les message d'erreur qu'on appel les messages box
-from turtle import bgcolor, title
-#from tkcalendar import *
+from turtle import bgcolor, title 
+
 
 import pymysql # #bibliothéque qui permet d'intéragir avec la base de données
  
 
-class AjouterDeslivres:  # classe formulaire:
+class Ajouterdesadherents:  
     def __init__(self,root):                   
         self.PageAjouterDesAdherents = root
         self.PageAjouterDesAdherents.title("Ajouter un Adhérent")
@@ -75,7 +75,7 @@ class AjouterDeslivres:  # classe formulaire:
 
         
 
-        #label pour ajouter un livre 
+        #titres
 
         titrenom = Label(self.PageAjouterDesAdherents, text=" Nom ",font =("algarian", 12,"bold"), bg="#bedb0d", fg="black")
         titrenom.place(x=300, y=150,width=100)
@@ -91,9 +91,7 @@ class AjouterDeslivres:  # classe formulaire:
 
       
 
-        
-        
-        
+       
         
         #Champs de saisie
         
@@ -174,5 +172,5 @@ class AjouterDeslivres:  # classe formulaire:
 
 
 root =Tk()
-obj = AjouterDeslivres(root)
+obj = Ajouterdesadherents(root)
 root.mainloop() 
