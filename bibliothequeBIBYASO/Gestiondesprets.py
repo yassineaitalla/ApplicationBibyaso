@@ -42,20 +42,20 @@ class gestionprets:  # classe gestionprets
 
 
         self.ImageGestionlivres = PhotoImage(file="Images/Gestionlivre.png")
-        self.BoutonPourAllerVersGestionLivres = Button(self.PageGestiondesprets,command=self.VersGestionLivres, text="",image=self.ImageGestionlivres, width=184,height=90, bg="#ff7f00",font="arial 12 bold")
+        self.BoutonPourAllerVersGestionLivres = Button(self.PageGestiondesprets,cursor="hand2",command=self.VersGestionLivres, text="",image=self.ImageGestionlivres, width=184,height=90, bg="#ff7f00",font="arial 12 bold")
         self.BoutonPourAllerVersGestionLivres.place(x=0 , y=0) 
         
         self.ImageAdherents = PhotoImage(file="Images/Adherents.png")
-        self.BoutonPourAllerVersAdherents = Button(self.PageGestiondesprets,command=self.VersAdherents, text="",image=self.ImageAdherents, width=184, height=90, bg="#ff7f00",font="arial 12 bold")
+        self.BoutonPourAllerVersAdherents = Button(self.PageGestiondesprets,cursor="hand2",command=self.VersAdherents, text="",image=self.ImageAdherents, width=184, height=90, bg="#ff7f00",font="arial 12 bold")
         self.BoutonPourAllerVersAdherents.place(x=0 , y=140) 
 
         self.ImageGestionDesprets = PhotoImage(file="Images/Emprunter.png")
-        self.BoutonPourAllerVersGestionDesprets = Button(self.PageGestiondesprets, text="",image=self.ImageGestionDesprets, width=184, height=90, bg="#ff7f00",font="arial 12 bold")
+        self.BoutonPourAllerVersGestionDesprets = Button(self.PageGestiondesprets,cursor="hand2", text="",image=self.ImageGestionDesprets, width=184, height=90, bg="#ff7f00",font="arial 12 bold")
         self.BoutonPourAllerVersGestionDesprets.place(x=0 , y=280) 
 
         
         self.ImageSedeconnecter = PhotoImage(file="Images/Sedeconnecter.png")
-        self.BoutonPourSedeconnecter = Button(self.PageGestiondesprets, text="",command=self.PourSeDeConnecter,image=self.ImageSedeconnecter, width=184, height=90, bg="#ff7f00",font="arial 12 bold")
+        self.BoutonPourSedeconnecter = Button(self.PageGestiondesprets, cursor="hand2",text="",command=self.PourSeDeConnecter,image=self.ImageSedeconnecter, width=184, height=90, bg="#ff7f00",font="arial 12 bold")
         self.BoutonPourSedeconnecter.place(x=0 , y=420) 
 
         
