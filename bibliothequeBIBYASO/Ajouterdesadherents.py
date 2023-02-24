@@ -8,7 +8,8 @@ from subprocess import call
 from tkinter import ttk, messagebox #permet d'afficher les message d'erreur qu'on appel les messages box
 from turtle import bgcolor, title
 #from tkcalendar import *
-import pymysql  
+
+import pymysql # #bibliothéque qui permet d'intéragir avec la base de données
  
 
 class AjouterDeslivres:  # classe formulaire:
@@ -27,13 +28,16 @@ class AjouterDeslivres:  # classe formulaire:
         self.villeAdherent = StringVar()
         
 
-
+        
+        #Cadres
         self.Paneauvertdegestionlivres = Frame(self.PageAjouterDesAdherents, bg="#bedb0d")
         self.Paneauvertdegestionlivres.place(x=190, y=0, width=1100, height=1000)
 
         Paneauorangedegestionlivres = Frame(self.PageAjouterDesAdherents, bg="#ff7f00")
         Paneauorangedegestionlivres.place(x=0, y=0, width=190, height=1000)
-
+        
+        
+        #BoutonImages
         self.ImageGestionlivres = PhotoImage(file="Images/Gestionlivre.png")
         self.BoutonImageGestionlivres = Button(self.PageAjouterDesAdherents,command=self.Versgestionlivres, text="",image=self.ImageGestionlivres, width=184,height=90, bg="#ff7f00",font="arial 12 bold")
         self.BoutonImageGestionlivres.place(x=0 , y=0) 
@@ -50,8 +54,12 @@ class AjouterDeslivres:  # classe formulaire:
         self.BoutonImageSedeconnecter = Button(self.PageAjouterDesAdherents,command=self.PourSedeconnecter, text="",image=self.ImageSedeconnecter, width=184, height=90, bg="#ff7f00",font="arial 12 bold")
         self.BoutonImageSedeconnecter.place(x=0 , y=420)
 
+        
+        #Grand titre
         titresgestionlivretitre = Label(self.PageAjouterDesAdherents, text=" Ajout d'adhérents ",font =("algarian", 20,"bold"), bg="#bedb0d", fg="black")
         titresgestionlivretitre.place(x=350, y=20,width=500)
+        
+        #titre des boutons
 
         titresgestionlivres = Label(self.PageAjouterDesAdherents, text=" Livres ",font =("algarian", 15,"bold"), bg="#ff7f00", fg="black")
         titresgestionlivres.place(x=0, y=100,width=190)
@@ -102,23 +110,28 @@ class AjouterDeslivres:  # classe formulaire:
         codepostalAdherent.place(x=500, y=280,width=150)
 
         
-        # bouton
+        #Bouton ajouter un adherent
         BoutonAjouterUnAdherent = Button(self.PageAjouterDesAdherents, command=self.ClickBoutonAjouterUnAdherent, text="Ajouter un adhérent",cursor="hand2", font=("times new roman",11), bd=0,bg="white",fg="black")
         BoutonAjouterUnAdherent.place(x=700, y=400)
 
-
-    def VersPageAdherents(self): #fonction qui permet de supprimer la page
-        self.PageAjouterDesAdherents.destroy()
-        call(["python", "Adherents.py"])
-
+    
+    #Fonction VersPageAdherents pour aller vers la page adherent
+    def VersPageAdherents(self): 
+        self.PageAjouterDesAdherents.destroy() 
+        call(["python", "Adherents.py"]) 
+    
+    #Fonction Versgestiondesprets pour aller vers la page gestion des prets
     def Versgestiondesprets(self):
         self.PageAjouterDesAdherents.destroy()
         call(["python", "Gestiondesprets.py"])
-        
+    
+    #Fonction pour aller vers la page gestionlivres
     def Versgestionlivres(self):
         self.PageAjouterDesAdherents.destroy()
         call(["python", "Gestionlivres.py"])
 
+       
+    #Fonction pour se déconnecter  
     def PourSedeconnecter(self):
         lemessagebox = messagebox.askyesno("Déconnexion", "Voulez-vous vous déconnecter", parent=self.PageAjouterDesAdherents)
         if lemessagebox == YES:
@@ -126,6 +139,8 @@ class AjouterDeslivres:  # classe formulaire:
          call(["python", "Connexion.py"])
 
     
+    
+    #Fonction pour ajouter un adherent 
     def ClickBoutonAjouterUnAdherent(self):
         if self.nomAdherent.get()=="" or self.prenomAdherent.get()=="" or self.codepostalAdherent.get()=="" or self.villeAdherent.get()=="":
          messagebox.showerror("Erreur", "Veuillez, remplir tout les champs", parent=self.PageAjouterDesAdherents) #si tout les champs ne sont pas rempli alors affiche un message box pour dire que les champs ne sont pas rempli 
