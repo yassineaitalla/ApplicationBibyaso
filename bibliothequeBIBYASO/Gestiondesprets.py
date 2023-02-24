@@ -9,7 +9,7 @@ from subprocess import call   #bibliotheque pour pouvoir changer de page
 
 
                     
-class gestionprets:  # classe formulaire:
+class gestionprets:  # classe gestionprets
     def __init__(self,root):  #constructeur                  
         self.PageGestiondesprets = root #changer
         self.PageGestiondesprets.title("Gestionprets") #titre de la fenetre 
