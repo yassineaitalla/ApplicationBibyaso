@@ -36,19 +36,19 @@ class AjoutLivres:  # classe ajoutlivres
 
         #PhotoBoutons
         self.ImageGestionlivres = PhotoImage(file="Images/Gestionlivre.png")
-        self.BoutonImagesGestionlivre = Button(self.PageAjouterDesLivres,command=self.VersGestionlivres, text="",image=self.ImageGestionlivres, width=184,height=90, bg="#ff7f00",font="arial 12 bold")
+        self.BoutonImagesGestionlivre = Button(self.PageAjouterDesLivres,cursor="hand2",command=self.VersGestionlivres, text="",image=self.ImageGestionlivres, width=184,height=90, bg="#ff7f00",font="arial 12 bold")
         self.BoutonImagesGestionlivre.place(x=0 , y=0) 
         
         self.ImageAdherents = PhotoImage(file="Images/Adherents.png")
-        self.BoutonImageAdherents = Button(self.PageAjouterDesLivres,command=self.VersAdherents ,text="",image=self.ImageAdherents, width=184, height=90, bg="#ff7f00",font="arial 12 bold")
+        self.BoutonImageAdherents = Button(self.PageAjouterDesLivres,cursor="hand2",command=self.VersAdherents ,text="",image=self.ImageAdherents, width=184, height=90, bg="#ff7f00",font="arial 12 bold")
         self.BoutonImageAdherents.place(x=0 , y=140) 
 
         self.ImageEmprunter = PhotoImage(file="Images/Emprunter.png")
-        self.BoutonImageEmprunter = Button(self.PageAjouterDesLivres,command=self.VersGestiondesprets, text="",image=self.ImageEmprunter, width=184, height=90, bg="#ff7f00",font="arial 12 bold")
+        self.BoutonImageEmprunter = Button(self.PageAjouterDesLivres,cursor="hand2",command=self.VersGestiondesprets, text="",image=self.ImageEmprunter, width=184, height=90, bg="#ff7f00",font="arial 12 bold")
         self.BoutonImageEmprunter.place(x=0 , y=280) 
 
         self.ImageSedeconnecter = PhotoImage(file="Images/Sedeconnecter.png")
-        self.BoutonImageSedeconnecter = Button(self.PageAjouterDesLivres, text="",command=self.PourSedeconnecter,image=self.ImageSedeconnecter, width=184, height=90, bg="#ff7f00",font="arial 12 bold")
+        self.BoutonImageSedeconnecter = Button(self.PageAjouterDesLivres,cursor="hand2", text="",command=self.PourSedeconnecter,image=self.ImageSedeconnecter, width=184, height=90, bg="#ff7f00",font="arial 12 bold")
         self.BoutonImageSedeconnecter.place(x=0 , y=420)
 
 
