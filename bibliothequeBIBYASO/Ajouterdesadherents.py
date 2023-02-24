@@ -18,7 +18,7 @@ class AjouterDesadherents:  # classe ajouter des adherents
         self.PageAjouterDesAdherents.geometry("1040x560+400+200")
         self.PageAjouterDesAdherents.resizable(width=False, height=False)
         self.PageAjouterDesAdherents.iconbitmap("Images/bib.ico")       
-        #self.PageAjouterDesAdherents.iconbitmap(r"C:\Users\yass\Desktop\bibliothequeBIBYASO\Images\bib.ico") 
+        
 
 
         self.nomAdherent = StringVar()
