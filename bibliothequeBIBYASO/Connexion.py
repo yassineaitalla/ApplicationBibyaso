@@ -15,17 +15,17 @@ class PagedeConnexion:  #classe formulaire
         self.PagedeConnexion.geometry("1040x560+400+200")  #taille de page
         
         self.PagedeConnexion.resizable(width=False, height=False) #pour que le bouton agrandir ne puisse pas marcher
-        #self.PagedeConnexion.iconbitmap(r"C:\Users\yass\Desktop\bibliothequeBIBYASO\Images\bib.ico")  #a modifier importer l'icone de l'application
+        self.PagedeConnexion.iconbitmap("Images/bib.ico")  #a modifier importer l'icone de l'application
         
          
         #champs du formulaire
         PaneauOrangeDuHaut = Frame(self.PagedeConnexion, bg="#ff7f00") #Frame est un conteneur qui permets de gérer des widgets paneau orange du haut 
         PaneauOrangeDuHaut.place(x=0, y=-30, width=1100, height=150) #largeur longeur taille du panneau
 
-        #self.ImageDelaPageConnexion = PhotoImage(file=r"C:\Users\yass\Desktop\bibliothequeBIBYASO\Images\bibliotheque.png") 
-        #self.BoutonPourRecupererLimage = Label(root, text="",image=self.ImageDelaPageConnexion, width=500, height=320, font="arial 12 bold") 
+        self.ImageDelaPageConnexion = PhotoImage(file="Images/bibliotheque.png") 
+        self.BoutonPourRecupererLimage = Label(root, text="",image=self.ImageDelaPageConnexion, width=500, height=320, font="arial 12 bold") 
       
-        #self.BoutonPourRecupererLimage.place(x=0,y=119) #Pour gerer l'emplacement du logo
+        self.BoutonPourRecupererLimage.place(x=0,y=119) #Pour gerer l'emplacement du logo
 
        
 
