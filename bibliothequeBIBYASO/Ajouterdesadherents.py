@@ -17,7 +17,7 @@ class AjouterDesadherents:  # classe formulaire:
         self.PageAjouterDesAdherents.title("Ajouter un Adhérent")
         self.PageAjouterDesAdherents.geometry("1040x560+400+200")
         self.PageAjouterDesAdherents.resizable(width=False, height=False)
-        self.PageAjouterDesAdherents.iconbitmap()       
+        self.PageAjouterDesAdherents.iconbitmap("Images/bib.ico")       
         #self.PageAjouterDesAdherents.iconbitmap(r"C:\Users\yass\Desktop\bibliothequeBIBYASO\Images\bib.ico") 
 
 
@@ -34,19 +34,19 @@ class AjouterDesadherents:  # classe formulaire:
         Paneauorangedegestionlivres = Frame(self.PageAjouterDesAdherents, bg="#ff7f00")
         Paneauorangedegestionlivres.place(x=0, y=0, width=190, height=1000)
 
-        self.ImageGestionlivres = PhotoImage()
+        self.ImageGestionlivres = PhotoImage(file="Images/Gestionlivre.png")
         self.BoutonImageGestionlivres = Button(self.PageAjouterDesAdherents,command=self.Versgestionlivres, text="",image=self.ImageGestionlivres, width=184,height=90, bg="#ff7f00",font="arial 12 bold")
         self.BoutonImageGestionlivres.place(x=0 , y=0) 
         
-        self.ImageAdherents = PhotoImage()
+        self.ImageAdherents = PhotoImage(file="Images/Adherents.png")
         self.BoutonImageAdherents = Button(self.PageAjouterDesAdherents,command=self.VersPageAdherents, text="",image=self.ImageAdherents, width=184, height=90, bg="#ff7f00",font="arial 12 bold")
         self.BoutonImageAdherents.place(x=0 , y=140) 
 
-        self.ImageGestiondesprets = PhotoImage()
+        self.ImageGestiondesprets = PhotoImage(file="Images/Emprunter.png")
         self.BoutonImageGestiondesprets = Button(self.PageAjouterDesAdherents,command=self.Versgestiondesprets, text="",image=self.ImageGestiondesprets, width=184, height=90, bg="#ff7f00",font="arial 12 bold")
         self.BoutonImageGestiondesprets.place(x=0 , y=280) 
 
-        self.ImageSedeconnecter = PhotoImage()
+        self.ImageSedeconnecter = PhotoImage(file="Images/Sedeconnecter.png")
         self.BoutonImageSedeconnecter = Button(self.PageAjouterDesAdherents,command=self.PourSedeconnecter, text="",image=self.ImageSedeconnecter, width=184, height=90, bg="#ff7f00",font="arial 12 bold")
         self.BoutonImageSedeconnecter.place(x=0 , y=420)
 
