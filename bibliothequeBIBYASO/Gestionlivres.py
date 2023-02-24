@@ -5,22 +5,22 @@ from email.mime import image
 from logging import root
 import operator 
 from re import L  #importe la constante L du module re pour activer le mode « localisation » des expressions régulières.     
-from tkinter import *  #Pour pouvoir importer la  bibiotheques tkinter on utilise pip install dans l'invite de commande
+from tkinter import * # pour importer la bibliotheque tkinter
 from subprocess import call  #importe la fonction call du module subprocess.
 from tkinter import ttk, messagebox #importe la sous-bibliothèque ttk et le module messagebox du module tkinter. 
 from turtle import bgcolor, title  #importe les fonctions bgcolor et title du module turtle.
- #permetre de gerer les selections et les messages d'erreur  afficher ou de securite
+ #permetre de gerer les selcetions et les message derrueeur  afficher ou de securite
 import pymysql #pour récuperer la bibliotheque de la base de donnée
   
                     
-class gestionlivres:  #classe gestion livres
+class gestionlivres:  #classe formulaire
     def __init__(self,root):                   
         self.Pagegestionlivres = root  
         self.Pagegestionlivres.title("Gestionlivres")#Titre de l'application gestion livres
         self.Pagegestionlivres.geometry("1040x560+400+200")#Taille de notre Application    
 
         self.Pagegestionlivres.resizable(width=False, height=False) #eviter d'agrandir la fenetre  
-        self.Pagegestionlivres.iconbitmap("Images/bib.ico") #Icone de l'application 
+        self.Pagegestionlivres.iconbitmap() #Icone de l'application 
 
 
         #Déclarer des variables pour ensuite les récuperer
@@ -43,20 +43,20 @@ class gestionlivres:  #classe gestion livres
 
         
         #Boutons Images
-        self.ImageGestionLivresDeLaPageGestionlivres = PhotoImage(file="Images/Gestionlivre.png")
+        self.ImageGestionLivresDeLaPageGestionlivres = PhotoImage()
         self.BoutonGestionLivresDeLaPageGestionlivres = Button(self.Pagegestionlivres,image=self.ImageGestionLivresDeLaPageGestionlivres, width=184,height=90, bg="#ff7f00",font="arial 12 bold")
         self.BoutonGestionLivresDeLaPageGestionlivres.place(x=0 , y=0) 
        
 
-        self.ImageAdherentDeLaPageGestionlivres = PhotoImage(file="Images/Adherents.png")
+        self.ImageAdherentDeLaPageGestionlivres = PhotoImage()
         self.BoutonGestionLivresDeLaPageGestionlivres = Button(self.Pagegestionlivres,command=self.VersPageAdherents, text="",image=self.ImageAdherentDeLaPageGestionlivres, width=184, height=90, bg="#ff7f00",font="arial 12 bold")
         self.BoutonGestionLivresDeLaPageGestionlivres.place(x=0 , y=140) 
 
-        self.ImageGestionDesPretsDeLaPageGestionlivres = PhotoImage(file="Images/Emprunter.png")
+        self.ImageGestionDesPretsDeLaPageGestionlivres = PhotoImage()
         self.BoutonGestionDesPretsDeLaPageGestionlivres = Button(self.Pagegestionlivres,command=self.VersPageGestionDesPrets, text="",image=self.ImageGestionDesPretsDeLaPageGestionlivres, width=184, height=90, bg="#ff7f00",font="arial 12 bold")
         self.BoutonGestionDesPretsDeLaPageGestionlivres.place(x=0 , y=280) 
 
-        self.ImageSeDeconnecterDeLaPageGestionlivres = PhotoImage(file="Images/Sedeconnecter.png")
+        self.ImageSeDeconnecterDeLaPageGestionlivres = PhotoImage()
         self.BoutonSeDeconnecterDeLaPageGestionlivres = Button(self.Pagegestionlivres, text="",command=self.BoutonDeconnexion,image=self.ImageSeDeconnecterDeLaPageGestionlivres, width=184, height=90, bg="#ff7f00",font="arial 12 bold")
         self.BoutonSeDeconnecterDeLaPageGestionlivres.place(x=0 , y=420) 
         
@@ -227,4 +227,6 @@ class gestionlivres:  #classe gestion livres
 root =Tk()
 obj = gestionlivres(root)
 root.mainloop()
+
+
 
