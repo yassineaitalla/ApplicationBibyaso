@@ -1,5 +1,5 @@
 from distutils.cmd import Command              
-                                               #pour pouvoir importer toute ces bibiotheques on utilise pip install dns l'invite de commande
+                                   #Pour pouvoir importer toute ces bibiotheques on utilise pip install dns l'invite de commande
 from logging import root 
 from tkinter import *    #pour importer la bibliotheque tkinter
   
