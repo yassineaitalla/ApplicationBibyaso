@@ -82,11 +82,8 @@ class PagedeConnexion:  #classe formulaire
         BoutonConnexion.place(x=250, y=170) 
         #command=self.connexion est utilisé pour recuperer la fonction pour recuperer le self.connexion qu'on a declarer en bas
     
-    """
-    def effacerchampssaisieconnexion(self): #on declare une fonction pour effacer champs de saisie apres une connexion
-        self.txt_email.delete(0, END) #efface le champs de saisie email
-        self.txt_motdepasse.delete(0, END) #efface le champs de saisie mot de passe
-    """
+    
+    #Fonction pour cliquer sur le bouton connexion
     
     def CliquerBoutonConnexion(self): #fonction Connexion qui prendra pour parametre self
         if self.emailDeLaPageConnexion.get()=="" or self.emailDeLaPageConnexion.get()=="":  #si le champs de saisie mail est égal à null et si le champ de saisie mot de passe est égal à null  
@@ -134,7 +131,7 @@ class PagedeConnexion:  #classe formulaire
                     self.PageDeMotdepasseOublie.resizable(width=False, height=False) #Eviter d'aggrandir la PageDeMotdepasseOublie
                     self.PageDeMotdepasseOublie.iconbitmap("Images/bib.ico") 
 
-                    #titres
+                    #Titres
                     titreMotdepasseOublieDelaPageMotdepasseOublie = Label(self.PageDeMotdepasseOublie, text= "Rénitialisez votre mot de passe", font =("Arial", 12,"bold"), fg="black")
                     titreMotdepasseOublieDelaPageMotdepasseOublie.place(x=93, y=20) 
                     
@@ -147,15 +144,18 @@ class PagedeConnexion:  #classe formulaire
                     self.questionDeLaPageMotDepasseOublie["values"]=("Select", "Prénom", "Lieu de naissance", "Meilleur ami", "Film préféré") 
                     self.questionDeLaPageMotDepasseOublie.place(x=10, y=100, width=110)
                     self.questionDeLaPageMotDepasseOublie.current(0)# combox pour récuperer les champs prenom lieu de naissance   
-
+                    
+                    
+                    #Titres
                     repondreDelaPageMotdepasseOublie = Label(self.PageDeMotdepasseOublie, text="Répondre", font =("Arial", 10,"bold"), fg="black")
                     repondreDelaPageMotdepasseOublie.place(x=10, y =150)
 
-                     # Label mot de passe
+                     
                     nouveaumotdepasseDelaPageMotdepasseOublie = Label(self.PageDeMotdepasseOublie, text="Nouveau Mot de passe", font =("Arial", 10,"bold"), fg="black")
                     nouveaumotdepasseDelaPageMotdepasseOublie.place(x=10, y =230)
 
                     
+                    #Champs de saisie
                     self.nouveaumotdepasseDelaPageMotdepasseOublie = Entry(self.PageDeMotdepasseOublie,show="*", font=(5), bg="white")
                     self.nouveaumotdepasseDelaPageMotdepasseOublie.place(x=10, y =270)
                     #show="*" permet de rendre le mot de passe invisible 
