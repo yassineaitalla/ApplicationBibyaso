@@ -1,12 +1,12 @@
-from distutils.cmd import Command              
-                                   #Pour pouvoir importer toute ces bibiotheques on utilise pip install dns l'invite de commande
+from distutils.cmd import Command              # c'est des bibliotheque qu'on a importer pour pouvoir bosser avec 
+                                               #pour pouvoir importer ces bibiotheques on utilise pip install dns l'invite de commande
 from logging import root 
 from tkinter import *    #pour importer la bibliotheque tkinter
   
-from tkinter import ttk, messagebox   #Pour pouvoir importer la  bibiotheques tkinter on utilise pip install dans l'invite de commande
+from tkinter import ttk, messagebox #pour les messages derreur
 import pymysql #c'est une bibliothèque python qui permet d'interagir avec une base de données
 from subprocess import call #bibliotheque pour changer de page
-
+import hashlib # Pour faire le hashage de mot de passe 
 
 class PagedeConnexion:  #classe formulaire 
     def __init__(self,root): #self représente l'instance de la classe. En utilisant le mot clé " self " nous pouvons accéder aux attributs et méthodes de la classe en python. 
@@ -15,17 +15,17 @@ class PagedeConnexion:  #classe formulaire
         self.PagedeConnexion.geometry("1040x560+400+200")  #taille de page
         
         self.PagedeConnexion.resizable(width=False, height=False) #pour que le bouton agrandir ne puisse pas marcher
-        self.PagedeConnexion.iconbitmap("Images/bib.ico")  #a modifier importer l'icone de l'application
+        #self.PagedeConnexion.iconbitmap(r"C:\Users\yass\Desktop\bibliothequeBIBYASO\Images\bib.ico")  #a modifier importer l'icone de l'application
         
          
         #champs du formulaire
         PaneauOrangeDuHaut = Frame(self.PagedeConnexion, bg="#ff7f00") #Frame est un conteneur qui permets de gérer des widgets paneau orange du haut 
         PaneauOrangeDuHaut.place(x=0, y=-30, width=1100, height=150) #largeur longeur taille du panneau
 
-        self.ImageDelaPageConnexion = PhotoImage(file="Images/bibliotheque.png") # logo a gauche des livres 
-        self.BoutonPourRecupererLimage = Label(root, text="",image=self.ImageDelaPageConnexion, width=500, height=320, font="arial 12 bold") 
+        #self.ImageDelaPageConnexion = PhotoImage(file=r"C:\Users\yass\Desktop\bibliothequeBIBYASO\Images\bibliotheque.png") 
+        #self.BoutonPourRecupererLimage = Label(root, text="",image=self.ImageDelaPageConnexion, width=500, height=320, font="arial 12 bold") 
       
-        self.BoutonPourRecupererLimage.place(x=0,y=119) #Pour gerer l'emplacement du logo
+        #self.BoutonPourRecupererLimage.place(x=0,y=119) #Pour gerer l'emplacement du logo
 
        
 
@@ -82,8 +82,11 @@ class PagedeConnexion:  #classe formulaire
         BoutonConnexion.place(x=250, y=170) 
         #command=self.connexion est utilisé pour recuperer la fonction pour recuperer le self.connexion qu'on a declarer en bas
     
-    
-    #Fonction pour cliquer sur le bouton connexion
+    """
+    def effacerchampssaisieconnexion(self): #on declare une fonction pour effacer champs de saisie apres une connexion
+        self.txt_email.delete(0, END) #efface le champs de saisie email
+        self.txt_motdepasse.delete(0, END) #efface le champs de saisie mot de passe
+    """
     
     def CliquerBoutonConnexion(self): #fonction Connexion qui prendra pour parametre self
         if self.emailDeLaPageConnexion.get()=="" or self.emailDeLaPageConnexion.get()=="":  #si le champs de saisie mail est égal à null et si le champ de saisie mot de passe est égal à null  
@@ -131,7 +134,7 @@ class PagedeConnexion:  #classe formulaire
                     self.PageDeMotdepasseOublie.resizable(width=False, height=False) #Eviter d'aggrandir la PageDeMotdepasseOublie
                     self.PageDeMotdepasseOublie.iconbitmap("Images/bib.ico") 
 
-                    #Titres
+                    #titres
                     titreMotdepasseOublieDelaPageMotdepasseOublie = Label(self.PageDeMotdepasseOublie, text= "Rénitialisez votre mot de passe", font =("Arial", 12,"bold"), fg="black")
                     titreMotdepasseOublieDelaPageMotdepasseOublie.place(x=93, y=20) 
                     
@@ -144,18 +147,15 @@ class PagedeConnexion:  #classe formulaire
                     self.questionDeLaPageMotDepasseOublie["values"]=("Select", "Prénom", "Lieu de naissance", "Meilleur ami", "Film préféré") 
                     self.questionDeLaPageMotDepasseOublie.place(x=10, y=100, width=110)
                     self.questionDeLaPageMotDepasseOublie.current(0)# combox pour récuperer les champs prenom lieu de naissance   
-                    
-                    
-                    #Titres
+
                     repondreDelaPageMotdepasseOublie = Label(self.PageDeMotdepasseOublie, text="Répondre", font =("Arial", 10,"bold"), fg="black")
                     repondreDelaPageMotdepasseOublie.place(x=10, y =150)
 
-                     
+                     # Label mot de passe
                     nouveaumotdepasseDelaPageMotdepasseOublie = Label(self.PageDeMotdepasseOublie, text="Nouveau Mot de passe", font =("Arial", 10,"bold"), fg="black")
                     nouveaumotdepasseDelaPageMotdepasseOublie.place(x=10, y =230)
 
                     
-                    #Champs de saisie
                     self.nouveaumotdepasseDelaPageMotdepasseOublie = Entry(self.PageDeMotdepasseOublie,show="*", font=(5), bg="white")
                     self.nouveaumotdepasseDelaPageMotdepasseOublie.place(x=10, y =270)
                     #show="*" permet de rendre le mot de passe invisible 
