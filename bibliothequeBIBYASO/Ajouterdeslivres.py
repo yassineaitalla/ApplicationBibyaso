@@ -1,7 +1,7 @@
 from ast import Delete, excepthandler
 from cProfile import label
 from email.mime import image
-from logging import root
+from logging import root 
 from re import L
 from tkinter import * #pour importer la bibliotheque tkinter
 from subprocess import call #Bibliotheque qui permet de faire appel au page sur les quelles on clique
@@ -108,7 +108,7 @@ class AjoutLivres:  #
         self.champsdesaisietat.delete(0, END)
 
 
-    #Fonction ClickAjouterUnLivre pour inserer une livre dans la bse de données
+    #Fonction ClickAjouterUnLivre pour inserer une livre dans la base de données
     def ClickAjouterUnLivre(self):
         if self.TitreLivre.get()=="" or self.Auteurs.get()=="" or self.Collections.get()=="" or self.Etat.get()=="":
          messagebox.showerror("Erreur", "Veuillez remplir tout les champs", parent=self.PageAjouterDesLivres) #si tout les champs ne sont pas rempli alors affiche un message box pour dire que les champs ne sont pas rempli 
