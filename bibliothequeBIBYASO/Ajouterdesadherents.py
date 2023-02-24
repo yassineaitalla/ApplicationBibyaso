@@ -11,7 +11,7 @@ from turtle import bgcolor, title
 import pymysql  
  
 
-class AjouterDeslivres:  # classe formulaire:
+class AjouterDesadherents:  # classe formulaire:
     def __init__(self,root):                   
         self.PageAjouterDesAdherents = root
         self.PageAjouterDesAdherents.title("Ajouter un Adhérent")
@@ -159,5 +159,5 @@ class AjouterDeslivres:  # classe formulaire:
 
 
 root =Tk()
-obj = AjouterDeslivres(root)
+obj = AjouterDesadherents(root)
 root.mainloop() 
