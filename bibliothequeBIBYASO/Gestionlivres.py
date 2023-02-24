@@ -5,7 +5,7 @@ from email.mime import image
 from logging import root
 import operator 
 from re import L  #importe la constante L du module re pour activer le mode « localisation » des expressions régulières.     
-from tkinter import * # pour importer la bibliotheque tkinter
+from tkinter import *  #Pour pouvoir importer la  bibiotheques tkinter on utilise pip install dans l'invite de commande
 from subprocess import call  #importe la fonction call du module subprocess.
 from tkinter import ttk, messagebox #importe la sous-bibliothèque ttk et le module messagebox du module tkinter. 
 from turtle import bgcolor, title  #importe les fonctions bgcolor et title du module turtle.
