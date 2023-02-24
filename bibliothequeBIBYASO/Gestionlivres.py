@@ -13,7 +13,7 @@ from turtle import bgcolor, title  #importe les fonctions bgcolor et title du mo
 import pymysql #pour récuperer la bibliotheque de la base de donnée
   
                     
-class gestionlivres:  #classe formulaire
+class gestionlivres:  #classe gestionlivres
     def __init__(self,root):                   
         self.Pagegestionlivres = root  
         self.Pagegestionlivres.title("Gestionlivres")#Titre de l'application gestion livres
