@@ -11,7 +11,7 @@ from turtle import bgcolor, title
 import pymysql  
  
 
-class AjouterDesadherents:  # classe formulaire:
+class AjouterDesadherents:  # classe ajouter des adherents
     def __init__(self,root):                   
         self.PageAjouterDesAdherents = root
         self.PageAjouterDesAdherents.title("Ajouter un Adhérent")
