@@ -1,28 +1,30 @@
 from ast import excepthandler
 from cProfile import label
 from email.mime import image
-from logging import root            # pour importer la bibliotheque tkinter
+from logging import root           
 from re import L
-from tkinter import * 
-from subprocess import call
+from tkinter import *  # pour importer la bibliotheque tkinter
+from subprocess import call #pour importer le module call qui permet de changer les pages
 
  
 
 
-from tkinter import ttk, messagebox
-from turtle import bgcolor, title #permetre de gerer les selcetions et les message derrueeur  afficher ou de securite
+from tkinter import ttk, messagebox #importer les message box
+from turtle import bgcolor, title #permetre de gerer les selcetions et les message d'erreur 
   
-import pymysql 
+import pymysql #importer bibliotheque pymysql pour intéragir avec la base de données
       
                     
-class adherents:  #classe formulaire:
+class adherents:  #classe adherents
     def __init__(self,root):                   
         self.PageAdherents = root
-        self.PageAdherents.title("Adherents")
+        self.PageAdherents.title("Adherents") 
         self.PageAdherents.geometry("1040x560+400+200")
         self.PageAdherents.resizable(width=False, height=False)
         self.PageAdherents.iconbitmap("Images/bib.ico") 
         
+        
+        #variables
         self.idAdherent = StringVar()
         self.nom = StringVar()
         self.prenom = StringVar()
@@ -31,12 +33,15 @@ class adherents:  #classe formulaire:
         self.recherche_par = StringVar()
         self.recherche = StringVar()
 
-
+        
+        #Cadres
         self.Paneauvertdegestionlivres = Frame(self.PageAdherents, bg="#bedb0d")
         self.Paneauvertdegestionlivres.place(x=190, y=0, width=1100, height=1000)
 
         Paneauorangedegestionlivres = Frame(self.PageAdherents, bg="#ff7f00")
         Paneauorangedegestionlivres.place(x=0, y=0, width=190, height=1000)
+        
+        #BoutonsImages
 
         self.ImageGestionlivres = PhotoImage(file="Images/Gestionlivre.png")
         self.BoutonGestionLivres = Button(self.PageAdherents, command=self.VersGestionsLivres,text="",image=self.ImageGestionlivres, width=184,height=90, bg="#ff7f00",font="arial 12 bold")
@@ -54,7 +59,7 @@ class adherents:  #classe formulaire:
         self.BoutonImageSedeconnecter = Button(self.PageAdherents, text="",command=self.PourSeDeconnecter,image=self.ImageSedeconnecter, width=184, height=90, bg="#ff7f00",font="arial 12 bold")
         self.BoutonImageSedeconnecter.place(x=0 , y=420)
 
-        # command  ------> Réecuperer la fontion qu'oncrée
+        
          
 
         #Titres
@@ -94,6 +99,7 @@ class adherents:  #classe formulaire:
         self.ChampsDesaisiePourRechercherDesadherents.place(x=570, y=90,width=150)
 
         
+        #liste
         Listeadherent = ttk.Combobox(self.PageAdherents,textvariable=self.recherche_par, font=("times new roman", 15), state="readonly")
         Listeadherent["values"]=("idAdherent", "nomAdherent") # on recupere le soit l'idEmprunt ou soit le numAdheren
         Listeadherent.place(x=455, y=87, width=110) #.place pour la position du ttk.combobox 
@@ -106,6 +112,7 @@ class adherents:  #classe formulaire:
         CadretableauGestionAdherents = Frame(self.PageAdherents, bd=5,relief=GROOVE,bg="white")
         CadretableauGestionAdherents.place(x=215, y=130,width=800, height=350)
 
+        #barededefilement
         barededefilementX = Scrollbar(CadretableauGestionAdherents,orient=HORIZONTAL)
         barededefilemenyY = Scrollbar(CadretableauGestionAdherents, orient=VERTICAL)
         
@@ -136,11 +143,14 @@ class adherents:  #classe formulaire:
         self.tableauGestionAdherents.bind("<ButtonRelease-1>",self.information) # le self information est important si on souhaite faire la meme vhose ailleurs
         self.ClickBoutonActualiser()
     
+    #Fonction pour aller vers la page qui ajoute des adherents
+    
     def AllerVersLaPagePourAjouterdesadherents(self):
         self.PageAdherents.destroy()
         call(["python", "ajouterdesadherents.py"]) 
     
     
+    #Fonction bouton rechercher
     def ClickBoutonRechercher(self):
         connectionbdd= pymysql.connect(host="localhost", user="root", password="", database="bddcomptes") # connexion a la base de donnes
         execut=connectionbdd.cursor()        
@@ -154,27 +164,30 @@ class adherents:  #classe formulaire:
         connectionbdd.close()
 
         
-
+ 
+    #Fonction pour aller vers la page gestionlivres
     def VersGestionsLivres(self):
         self.PageAdherents.destroy()
         call(["python", "Gestionlivres.py"]) 
 
     
+    #Fonction pour aller vers la page gestion des prets
     def VersGestionsdesPrets(self):
         self.PageAdherents.destroy()
         call(["python", "GestionDesprets.py"]) 
 
     
+    #Fonction pour se deconnecter
     def PourSeDeconnecter(self):
         
         lemessagebox = messagebox.askyesno("Déconnexion","Voulez-vous vous déconnecter", parent=self.PageAdherents)
         if lemessagebox == YES:
-         self.PageAdherents.destroy()                           
-         call(["python", "Connexion.py"])
+        self.PageAdherents.destroy()                           
+        call(["python", "Connexion.py"])
         
         
       
-
+    #Fonction information qui permet de récuperer les informations et les inserer dans la tableau
     def information(self,ev):
         cursor_row = self.tableauGestionAdherents.focus()
         contents = self.tableauGestionAdherents.item(cursor_row)
@@ -185,7 +198,9 @@ class adherents:  #classe formulaire:
         self.prenom.set(row[2]),
         self.codepostal.set(row[3]),
         self.ville.set(row[4]),
+        
     
+    #Fonction actualiser qui permet d'actualiser apres un ajout 
     def ClickBoutonActualiser(self):
         connectionbdd =  pymysql.connect(host="localhost", user="root", password="", database="bddcomptes")
         execut=connectionbdd.cursor() #Cursor permet d'éxecuter une operation SQL   
@@ -202,7 +217,7 @@ class adherents:  #classe formulaire:
 
 
 
-        
+    #Fonction qui permet de supprimer un adherent    
     def SupprimerunAdherent(self):
 
         if self.idAdherent.get()=="":
