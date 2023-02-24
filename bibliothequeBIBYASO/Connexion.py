@@ -8,7 +8,7 @@ import pymysql #c'est une bibliothèque python qui permet d'interagir avec une b
 from subprocess import call #bibliotheque pour changer de page
 import hashlib # Pour faire le hashage de mot de passe 
 
-class PagedeConnexion:  #classe formulaire 
+class PagedeConnexion:  #classe page de connexion
     def __init__(self,root): #self représente l'instance de la classe. En utilisant le mot clé " self " nous pouvons accéder aux attributs et méthodes de la classe en python. 
         self.PagedeConnexion = root  
         self.PagedeConnexion.title("Connexion") #titre en haut de la page
