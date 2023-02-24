@@ -15,7 +15,7 @@ from turtle import bgcolor, title #permetre de gerer les selcetions et les messa
 import pymysql 
       
                     
-class adherents:  #classe formulaire:
+class adherents:  #classe adherents
     def __init__(self,root):                   
         self.PageAdherents = root
         self.PageAdherents.title("Adherents")
