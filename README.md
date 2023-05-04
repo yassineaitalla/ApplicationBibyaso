@@ -14,7 +14,9 @@ pip install -r requirements.txt
 
 Utilisation
 
-Après avoir installé les bibliothèques nécessaires, vous pouvez exécuter l'application en exécutant le fichier connexion.py. Vous pouvez créer un compte pour utiliser l'application.
+Après avoir installé les bibliothèques nécessaires, vous pouvez exécuter l'application en exécutant le fichier connexion.py.
+
+Maintenant vous pouvez créer un compte pour utiliser l'application.
 
 Auteurs
 
