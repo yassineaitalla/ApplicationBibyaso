@@ -16,7 +16,7 @@ Utilisation
 
 Après avoir installé les bibliothèques nécessaires, vous pouvez exécuter l'application en exécutant le fichier connexion.py.
 
-Maintenant vous pouvez créer un compte pour utiliser l'application.
+Maintenant, vous pouvez créer un compte pour utiliser l'application.
 
 Auteurs
 
