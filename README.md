@@ -12,6 +12,8 @@ Une fois que vous êtes dans le dossier bibliothequeBIBYASOfinal, vous pouvez ex
 
 pip install -r requirements.txt
 
+ou faire pip install + le nom de le bibliotheque à installer.
+
 Utilisation
 
 Après avoir installé les bibliothèques nécessaires, vous pouvez exécuter l'application en exécutant le fichier connexion.py.
